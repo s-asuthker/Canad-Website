@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import plotly.graph_objects as gr
 # ERROR: Remove this line - starlette.routing.request_response is not used anywhere in your code
-# from starlette.routing import request_response
+
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 # ERROR: File 'canad_predict.py' does not exist. You need to create this file with functions: GPT_turbo, ollama, economic_code
