@@ -155,24 +155,12 @@ def get_news(topic):
 
 # ERROR: GPT4All model path is hardcoded to a local user path that won't work on other machines
 # SOLUTION: Either use a relative path or download the model properly. For now, add error handling
-try:
-    model = GPT4All(
-        "mistral-7b-instruct-v0.2.Q4_0.gguf",
-        model_path="/Users/sid_asuthker/models_folder/models/mistral",  # ERROR: This path is specific to your machine and won't work for others
-        device="cpu"
-    )
-except Exception as e:
-    print(f"ERROR: Could not load GPT4All model: {e}")
-    print("The model will not be available. Install it or use a different path.")
-    model = None
 
 load_dotenv()
 
 app = Flask(__name__)
 
 def get_coord(city):
-    # ERROR: If city is None, this will fail
-    # SOLUTION: Add validation
     if not city:
         return None, None
     geo_url = f"https://geocoding-api.open-meteo.com/v1/search?name={city}&count=1"
