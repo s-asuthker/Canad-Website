@@ -122,7 +122,9 @@ def search_wikipedia(query):
 """VERY IMPORTANT:
 """
 def get_news(topic):
-    api_key = "3d8741ac-9f6a-4ee6-b49e-f748f2e88d06"
+    api_key = os.getenv("GUARDIAN_API_KEY")
+    if not api_key:
+        print("ERROR: Failed to retrieve guardian api key")
     params = {
         "section": topic,  # change to whatever section you want
         "page-size": 10,
